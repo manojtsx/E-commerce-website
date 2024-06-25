@@ -22,6 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.env
 
 #Vidoes
 E-commerce website ©️ Manoj - Google Chrome 2024-06-17 18-30-55.mp4
