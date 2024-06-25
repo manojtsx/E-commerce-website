@@ -24,8 +24,6 @@ const Product: React.FC = () => {
   const navigate = useNavigate();
   const [products, setProducts] = useState<ProductType[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<ProductType[]>([]);
-  const [searchData, setSearchData] = useState("");
-
   const getAllProducts = async () => {
     try {
       const response = await fetch(`${API}api/product/products`, {
@@ -52,7 +50,6 @@ const Product: React.FC = () => {
 
   // handle the search
   const handleSearchChange = (searchValue: string) => {
-    setSearchData(searchValue);
     if (searchValue === "") {
       setFilteredProducts(products); // If search is cleared, show all products again
     } else {
@@ -77,7 +74,7 @@ const Product: React.FC = () => {
         throw new Error(data.msg);
       } else {
         toast.success(data.msg);
-        const filtered = products.filter((item, index) => {
+        const filtered = products.filter((item) => {
           return item._id !== id;
         })
         setFilteredProducts(filtered)

@@ -18,7 +18,6 @@ const Home: React.FC = () => {
     const navigate = useNavigate();
     const [products, setProducts] = useState<ProductType[]>([]);
     const [filteredProducts, setFilteredProducts] = useState<ProductType[]>([]);
-    const [searchData, setSearchData] = useState("");
 
     const getAllProducts = async () => {
         try {
@@ -46,7 +45,6 @@ const Home: React.FC = () => {
 
     // handle the search
     const handleSearchChange = (searchValue: string) => {
-        setSearchData(searchValue);
         if (searchValue === "") {
             setFilteredProducts(products); // If search is cleared, show all products again
         } else {

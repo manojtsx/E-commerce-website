@@ -10,6 +10,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  ChartData,
 } from 'chart.js';
 
 ChartJS.register(
@@ -36,13 +37,13 @@ const barChartData = {
   ],
 };
 
-const lineChartData = {
+const lineChartData : ChartData<"line", number[], string> = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [
     {
       label: 'User Views',
       fill: false,
-      lineTension: 0.1,
+      tension: 0.1,
       backgroundColor: 'rgba(75,192,192,0.4)',
       borderColor: 'rgba(75,192,192,1)',
       borderCapStyle: 'butt',
